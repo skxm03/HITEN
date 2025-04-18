@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Fashiion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+      }
+    </style>
+    <div
+      class="h-full flex flex-col font-mono"
+      style="
+        background-image: url('./1-16.jpg');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div
+        class="absolute inset-0 bg-black bg-opacity-50"
+        style="z-index: 0"
+      ></div>
+      <!-- Navbar -->
+      <nav class="flex items-center justify-between px-8 z-10">
+        <div class="flex items-center z-10">
+          <img src="./logo2.PNG" alt="Logo" class="h-12 w-12 mr-3" />
+          <span class="text-2xl font-semibold text-white">Star Fashiion</span>
+        </div>
+        <div class="flex space-x-4 z-10">
+          <a
+            href="#featured-collections"
+            class="text-lg font-medium text-white hover:underline mx-5"
+            onclick="scrollToSection('#featured-collections');"
+          >
+            Categories
+          </a>
+          <a
+            href="#contact-footer"
+            class="text-lg font-medium text-white hover:underline mx-5"
+            onclick="scrollToSection('#contact-footer');"
+          >
+            Contact Us
+          </a>
+        </div>
+      </nav>
+      <!-- Marquee -->
+
+      <div class="relative overflow-hidden bg-white py-4">
+        <div class="absolute top-0 left-0 w-full h-full flex items-center">
+          <div class="animate-marquee whitespace-nowrap">
+            <span class="text-lg font-semibold text-gray-700 mx-8">
+              🎉 Up to 50% off on selected items!
+            </span>
+            <span class="text-lg font-semibold text-gray-700 mx-8">
+              🛍️ Free shipping on orders over $50!
+            </span>
+            <span class="text-lg font-semibold text-gray-700 mx-8">
+              ✨ New arrivals are here! Shop now!
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .animate-marquee {
+          display: inline-block;
+          animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+          from {
+            transform: translateX(100%);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+
+        .animate-hero {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .animate-hero-button {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      </style>
+
+      <!-- Landing Content -->
+      <div
+        class="flex-grow flex items-center justify-start text-left font-mono z-10"
+      >
+        <div class="px-8 rounded-lg text-white">
+          <h2
+            class="text-6xl font-bold mb-4 max-w-3xl opacity-0 translate-y-5 transition-all duration-700 ease-out delay-200 animate-hero"
+          >
+            One stop solution for your shopping needs.
+          </h2>
+          <p class="text-xl mt-10 mb-10">
+            Discover the latest trends and timeless styles for women.
+          </p>
+          <a
+            href="#shop-now"
+            class="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 opacity-0 translate-y-5 transition-all duration-700 ease-out delay-600 animate-hero-button"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const heroElements = document.querySelectorAll(".animate-hero");
+        const heroButton = document.querySelector(".animate-hero-button");
+
+        heroElements.forEach((element) => {
+          setTimeout(() => {
+            element.classList.add("animate-hero");
+          }, 200); // Stagger the start times if needed
+        });
+
+        setTimeout(() => {
+          heroButton.classList.add("animate-hero-button");
+        }, 600); // Delay for the button
+      });
+    </script>
+
+    <!-- Featured Collections -->
+
+    <h1 class="font-mono text-3xl font-bold mb-8 mx-8 mt-5">
+      Discover Our Featured Collections
+    </h1>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-8"
+      id="featured-collections"
+    >
+      <!-- Elegant Sarees -->
+      <div
+        class="bg-white outline rounded-xl shadow-md overflow-hidden flex flex-col md:col-span-2 hover:scale-105 transition-transform duration-500"
+      >
+        <div class="flex flex-col md:flex-row">
+          <div class="p-6 flex-1">
+            <div class="text-gray-600 mb-5 text-5xl">🧵</div>
+            <h2 class="text-3xl font-semibold mb-2">Lowers and T-shirts</h2>
+            <p class="text-xl text-gray-600">
+              Comfortable and trendy lowers and t-shirts for everyday wear. Find
+              variety of Lowers and T-shirts from brands like Bodycare, Lyra,
+              Queen and more.
+            </p>
+          </div>
+          <img
+            src="./1-12.JPG"
+            alt="Elegant Sarees"
+            class="object-cover md:w-2/5 h-64 md:h-auto"
+          />
+        </div>
+      </div>
+
+      <!-- Chic Kurtis -->
+      <div
+        class="bg-white outline rounded-xl shadow-md overflow-hidden flex flex-col hover:scale-105 transition-transform duration-500"
+      >
+        <img
+          src="./1-13.jpg"
+          alt="Chic Kurtis"
+          class="object-cover h-40 w-full"
+        />
+        <div class="p-4">
+          <div class="text-gray-600 mb- text-4xl">👗</div>
+          <h2 class="text-2xl font-semibold mb-2">Night Suits</h2>
+          <p class="text-lg text-gray-600">
+            Experience ultimate comfort with our stylish and cozy night suits.
+          </p>
+        </div>
+      </div>
+
+      <!-- Trendy Lehengas -->
+      <div
+        class="bg-white outline rounded-xl shadow-md overflow-hidden flex flex-col hover:scale-105 transition-transform duration-500"
+      >
+        <img
+          src="./1-15.jpg"
+          alt="Trendy Lehengas"
+          class="object-cover h-32 w-full"
+        />
+        <div class="p-4">
+          <div class="text-gray-600 mb-1 text-4xl">💃</div>
+          <h2 class="text-2xl font-semibold mb-2">Lingeries</h2>
+          <p class="text-lg text-gray-600">
+            Discover our comfortable and stylish lingerie collection for every
+            occasion.
+          </p>
+        </div>
+      </div>
+
+      <!-- Casual Wear -->
+      <div
+        class="bg-white outline rounded-xl shadow-md overflow-hidden flex flex-col md:col-span-2 hover:scale-105 transition-transform duration-500"
+      >
+        <div class="flex flex-col md:flex-row-reverse">
+          <div class="p-6 flex-1">
+            <div class="text-gray-600 mb-5 text-5xl">❄️</div>
+            <h2 class="text-3xl font-semibold mb-2">Cot sets</h2>
+            <p class="text-xl text-gray-600">
+              Perfect for lounging or casual outings, our cot sets combine
+              comfort and style effortlessly. Find cot sets from brands like
+              Bodycare, Lyra and more.
+            </p>
+          </div>
+          <img
+            src="./1-14.jpg"
+            alt="Casual Wear"
+            class="object-cover md:w-1/4 md:h-auto"
+          />
+        </div>
+      </div>
+    </div>
+    <style>
+      .feature-card.animate-in {
+        opacity: 1;
+        transform: translateX(0); /* Reset the translation */
+      }
+    </style>
+    <h1 class="font-mono text-3xl font-semibold mx-10 mt-20">
+      Why buy from us?
+    </h1>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 mx-10"
+    >
+      <div
+        class="feature-card bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-xl shadow-lg p-8 flex flex-col items-center transform opacity-0 translate-x-[-20px] transition-all duration-500"
+      >
+        <div class="text-5xl mb-6 animate-bounce">🚚</div>
+        <h3 class="text-xl font-bold mb-3">Free Shipping</h3>
+        <p class="text-center text-sm">
+          Enjoy free shipping on all orders above $50. Shop more, save more!
+        </p>
+      </div>
+
+      <div
+        class="feature-card bg-gradient-to-br from-green-400 to-teal-500 text-white rounded-xl shadow-lg p-8 flex flex-col items-center transform opacity-0 translate-x-[-20px] transition-all duration-500 delay-100"
+      >
+        <div class="text-5xl mb-6 animate-spin-slow">💳</div>
+        <h3 class="text-xl font-bold mb-3">Easy Payments</h3>
+        <p class="text-center text-sm">
+          Multiple payment options available for a seamless shopping experience.
+        </p>
+      </div>
+
+      <div
+        class="feature-card bg-gradient-to-br from-pink-500 to-red-500 text-white rounded-xl shadow-lg p-8 flex flex-col items-center transform opacity-0 translate-x-[-20px] transition-all duration-500 delay-200"
+      >
+        <div class="text-5xl mb-6 animate-pulse">🎁</div>
+        <h3 class="text-xl font-bold mb-3">Exclusive Offers</h3>
+        <p class="text-center text-sm">
+          Get access to exclusive deals and discounts on your favorite items.
+        </p>
+      </div>
+
+      <div
+        class="feature-card bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-xl shadow-lg p-8 flex flex-col items-center transform opacity-0 translate-x-[-20px] transition-all duration-500 delay-300"
+      >
+        <div class="text-5xl mb-6 animate-bounce">⭐</div>
+        <h3 class="text-xl font-bold mb-3">Premium Quality</h3>
+        <p class="text-center text-sm">
+          We ensure top-notch quality in every product we offer to our
+          customers.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const featureCards = document.querySelectorAll(".feature-card");
+
+      function checkSlide() {
+        featureCards.forEach((card) => {
+          // Get the vertical position of the card relative to the viewport
+          const slideInAt =
+            window.scrollY + window.innerHeight - card.offsetHeight / 2;
+          // Get the bottom position of the card relative to the viewport
+          const cardBottom = card.offsetTop + card.offsetHeight;
+          // Check if half of the card is visible
+          const isHalfShown = slideInAt > card.offsetTop;
+          // Check if the card hasn't completely scrolled out of view
+          const isNotScrolledPast = window.scrollY < cardBottom;
+
+          if (isHalfShown && isNotScrolledPast) {
+            card.classList.add("animate-in");
+          }
+        });
+      }
+
+      // Listen for scroll events
+      window.addEventListener("scroll", checkSlide);
+
+      // Check on initial load in case some cards are already in view
+      checkSlide();
+    </script>
+
+    <style>
+      @keyframes spin-slow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 10s linear infinite;
+      }
+    </style>
+
+    <!-- ABOUT US -->
+
+    <div
+      class="font-mono flex items-center bg-gray-100 shadow-lg rounded-lg mx-8 my-10 p-6"
+    >
+      <div class="w-1/3">
+        <img
+          src="./star fashion.png"
+          alt="About Us"
+          class="w-72 h-auto rounded-lg"
+        />
+      </div>
+      <div class="w-2/3 pl-6">
+        <h3 class="text-3xl font-bold text-gray-800 mb-15">
+          About Star Fashiion
+        </h3>
+        <p class="text-gray-600 leading-relaxed text-xl">
+          Star Fashiion is your one-stop destination for trendy and affordable
+          clothing for women. We pride ourselves on offering high-quality
+          products that cater to all your fashion needs. Our mission is to bring
+          style and comfort to your wardrobe while ensuring exceptional customer
+          service. From chic casual wear to elegant evening outfits, we have
+          something for every occasion. Explore our collection and redefine your
+          style with Star Fashiion today!
+        </p>
+      </div>
+    </div>
+
+    <!-- Customer Reviews -->
+
+    <div class="font-mono ml-1 my-16 px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-left">
+        What our customers say
+      </h2>
+
+      <div class="relative">
+        <div class="overflow-hidden">
+          <div
+            id="reviews-container"
+            class="flex space-x-6 transition-transform duration-500 ease-in-out ml-3 my-3 pl-10 w-fit"
+            style="transform: translateX(0px)"
+          >
+            <div
+              class="review-card bg-white shadow-lg rounded-lg p-6 text-center min-w-[300px] transition-all duration-300 outline hover:scale-105"
+              style="opacity: 1"
+            >
+              <div class="mb-4 flex justify-center">
+                <div
+                  class="h-16 w-16 rounded-full bg-gradient-to-r from-blue-300 to-purple-300 flex items-center justify-center shadow-md"
+                >
+                  <span class="text-white text-2xl font-bold">JD</span>
+                </div>
+              </div>
+              <div class="stars flex justify-center mb-3">
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+              <p class="text-gray-600 italic mb-4">
+                "Amazing quality and fast delivery! Highly recommend Star
+                Fashiion."
+              </p>
+              <h4 class="text-lg font-bold">- John Doe</h4>
+            </div>
+
+            <div
+              class="review-card bg-white shadow-lg rounded-lg p-6 text-center min-w-[300px] transition-all duration-300 outline hover:scale-105"
+              style="opacity: 1"
+            >
+              <div class="mb-4 flex justify-center">
+                <div
+                  class="h-16 w-16 rounded-full bg-gradient-to-r from-green-300 to-blue-300 flex items-center justify-center shadow-md"
+                >
+                  <span class="text-white text-2xl font-bold">JS</span>
+                </div>
+              </div>
+              <div class="stars flex justify-center mb-3">
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+              <p class="text-gray-600 italic mb-4">
+                "Great variety of styles and affordable prices. Love shopping
+                here!"
+              </p>
+              <h4 class="text-lg font-bold">- Jane Smith</h4>
+            </div>
+
+            <div
+              class="review-card bg-white shadow-lg rounded-lg p-6 text-center min-w-[300px] transition-all duration-300 outline hover:scale-105"
+              style="opacity: 1"
+            >
+              <div class="mb-4 flex justify-center">
+                <div
+                  class="h-16 w-16 rounded-full bg-gradient-to-r from-purple-300 to-pink-300 flex items-center justify-center shadow-md"
+                >
+                  <span class="text-white text-2xl font-bold">EJ</span>
+                </div>
+              </div>
+              <div class="stars flex justify-center mb-3">
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+              <p class="text-gray-600 italic mb-4">
+                "Excellent customer service and top-notch products. Will buy
+                again!"
+              </p>
+              <h4 class="text-lg font-bold">- Emily Johnson</h4>
+            </div>
+
+            <div
+              class="review-card bg-white shadow-lg rounded-lg p-6 text-center min-w-[300px] transition-all duration-300 outline hover:scale-105"
+              style="opacity: 1"
+            >
+              <div class="mb-4 flex justify-center">
+                <div
+                  class="h-16 w-16 rounded-full bg-gradient-to-r from-red-300 to-yellow-300 flex items-center justify-center shadow-md"
+                >
+                  <span class="text-white text-2xl font-bold">MC</span>
+                </div>
+              </div>
+              <div class="stars flex justify-center mb-3">
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+              <p class="text-gray-600 italic mb-4">
+                "The fashion collection is trendy and high quality. Very
+                satisfied!"
+              </p>
+              <h4 class="text-lg font-bold">- Michael Chen</h4>
+            </div>
+
+            <div
+              class="review-card bg-white shadow-lg rounded-lg p-6 text-center min-w-[300px] transition-all duration-300 outline hover:scale-105"
+              style="opacity: 1"
+            >
+              <div class="mb-4 flex justify-center">
+                <div
+                  class="h-16 w-16 rounded-full bg-gradient-to-r from-blue-300 to-teal-300 flex items-center justify-center shadow-md"
+                >
+                  <span class="text-white text-2xl font-bold">SW</span>
+                </div>
+              </div>
+              <div class="stars flex justify-center mb-3">
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+              <p class="text-gray-600 italic mb-4">
+                "Fast shipping and the clothes fit perfectly. Will order again!"
+              </p>
+              <h4 class="text-lg font-bold">- Sarah Williams</h4>
+            </div>
+
+            <div
+              class="review-card bg-white shadow-lg rounded-lg p-6 text-center min-w-[300px] transition-all duration-300 outline hover:scale-105"
+              style="opacity: 1"
+            >
+              <div class="mb-4 flex justify-center">
+                <div
+                  class="h-16 w-16 rounded-full bg-gradient-to-r from-orange-300 to-red-300 flex items-center justify-center shadow-md"
+                >
+                  <span class="text-white text-2xl font-bold">DR</span>
+                </div>
+              </div>
+              <div class="stars flex justify-center mb-3">
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+              <p class="text-gray-600 italic mb-4">
+                "Best online shopping experience I've had in years. Highly
+                recommend!"
+              </p>
+              <h4 class="text-lg font-bold">- David Rodriguez</h4>
+            </div>
+          </div>
+        </div>
+        <button
+          onclick="scrollReviews(-1)"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold rounded-full w-10 h-10 flex items-center justify-center focus:outline-none shadow-md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          onclick="scrollReviews(1)"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold rounded-full w-10 h-10 flex items-center justify-center focus:outline-none shadow-md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function scrollToSection(hash) {
+        console.log(hash);
+        const target = document.querySelector(hash);
+        console.log(target);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start", // or 'center', 'end', 'nearest'
+          });
+        }
+      }
+
+      let index = 0;
+      const container = document.getElementById("reviews-container");
+      const cardWidth = 120; // Approximate width of a card + margin
+      const numCards = container.children.length;
+
+      function scrollReviews(direction) {
+        index = Math.max(0, Math.min(index + direction, numCards - 1));
+        container.style.transform = `translateX(-${index * cardWidth}px)`;
+        // Update active dot if you implement progress dots
+        // updateDots();
+      }
+
+      // Optional: Function to update the active progress dot
+      // const dotsContainer = document.querySelector('.space-x-2'); // Adjust selector if needed
+      // const dots = dotsContainer ? dotsContainer.children : [];
+
+      // function updateDots() {
+      //   if (dots.length > 0) {
+      //     for (let i = 0; i < dots.length; i++) {
+      //       dots[i].classList.remove('bg-indigo-500'); // Active color
+      //       dots[i].classList.add('bg-gray-300');
+      //     }
+      //     dots[index].classList.add('bg-indigo-500');
+      //   }
+      // }
+
+      // Initialize dots if you choose to use them
+      // if (dotsContainer) {
+      //   for (let i = 0; i < numCards; i++) {
+      //     const dot = document.createElement('button');
+      //     dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-gray-500', 'transition-colors', 'duration-300');
+      //     dot.addEventListener('click', () => {
+      //       index = i;
+      //       container.style.transform = `translateX(-${index * cardWidth}px)`;
+      //       updateDots();
+      //     });
+      //     dotsContainer.appendChild(dot);
+      //   }
+      //   updateDots(); // Set initial active dot
+      // }
+    </script>
+    <!-- Contact Footer -->
+
+    <footer class="bg-gray-700 text-white py-10" id="contact-footer">
+      <div class="container px-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Contact Information -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4">Contact Us</h2>
+            <p class="text-sm mb-2">
+              📍 Shop No. 6, Shivpuri Rd, Sector 7, Gurugram, Haryana 122001
+            </p>
+            <p class="text-sm mb-2">📞 Phone: +91 9211372357</p>
+            <p class="text-sm mb-2">📧 Email: starfashiion2019@gmail.com</p>
+          </div>
+
+          <!-- Google Maps Placeholder -->
+          <div class="lg:col-span-2">
+            <h2 class="text-xl font-semibold mb-4">Our Location</h2>
+            <div class="w-full h-60 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.3381830163416!2d77.01063567597609!3d28.469360375754263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1959edd326ab%3A0x168adfbb3c9ea211!2sSTAR%20FASHION(Jockey%2C%20Bodycare%2CLyra)Ladies%20%26%20Men&#39;s%20UndergarmentsLowers%2C%20T-shirts%2CNight%20Suits%2CFancy%20Tops%2CJeans!5e0!3m2!1sen!2sin!4v1744970778386!5m2!1sen!2sin"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-sm text-gray-400 mt-8">
+          Made by VENDARC
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
